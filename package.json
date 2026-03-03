@@ -1,7 +1,7 @@
 {
   "name": "hydroponics",
   "version": "1.0.0",
-  "description": "``` mkdir hydroponics cd hydroponics git init npm init -y ```",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "desktop": "npm run dev -w @hydroponics/desktop",
