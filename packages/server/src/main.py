@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from . import crud, models, schemas
 from .database import SessionLocal, engine, get_db
 import uvicorn
+from .addition import add
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -23,6 +24,11 @@ def read_item(item_id: int, db: Session = Depends(get_db)):
 def read_items(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
     items = crud.get_items(db, skip=skip, limit=limit)
     return items
+
+@app.get("/add/")
+def add_numbers(number_1: int, number_2: int):
+    result = add(number_1, number_2)
+    return {"result": result}
 
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000, reload=True)
