@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "setup": "npm install && cd packages/server && python3 -m venv .venv && .venv/bin/pip install -r requirements.txt",
     "desktop": "npm run dev -w @hydroponics/desktop",
     "web": "npm run web -w @hydroponics/mobile",
     "ios": "npm run ios -w @hydroponics/mobile",
     "android": "npm run android -w @hydroponics/mobile",
     "terminal": "npm exec -w @hydroponics/terminal ts-node src/index.ts --",
-    "server": "./packages/server/.venv/bin/python packages/server/src/main.py --"
+    "server": "cd packages/server && .venv/bin/uvicorn src.main:app --host 127.0.0.1 --port 8000"
   },
   "keywords": [],
   "author": "",

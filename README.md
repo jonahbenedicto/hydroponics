@@ -15,19 +15,13 @@
 
 ## Installation
 
-Install Node.js packages:
+Run for macos
 ```bash
-npm install
+npm run setup
 ```
 
-Install Python packages (server):
-```bash
-cd packages/server
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-deactivate
-```
+Connect to database:
+Make .env file
 
 ## Usage
 
